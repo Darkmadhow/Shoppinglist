@@ -40,8 +40,11 @@ form{
   padding: 0.2rem;
 }
 
-ul {
+.listBody {
   width: 30%;
+}
+ul{
+  width: 100%;
 }
 li {
   width: 100%;

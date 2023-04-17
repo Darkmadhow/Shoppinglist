@@ -6,20 +6,12 @@ import ShopList from './components/ShopList';
 function App() {
   const [shoppingList, setShoppingList] = useState([]);
 
-  function addItem(item){
-    setShoppingList([item,...shoppingList]);
-  }
-
-  function removeItem(itemName){
-    setShoppingList(shoppingList.filter(item => item.itemName !== itemName));
-  }
-
   return (
     <div className="App">
       <header className="App-header">
         <h2>Shopping List</h2>
-        <ShopForm addItem={addItem} />
-        <ShopList shoppingItems={shoppingList} removeItem={removeItem} />
+        <ShopForm setItems={setShoppingList} />
+        <ShopList shoppingItems={shoppingList} setItems={setShoppingList} />
       </header>
     </div>
   );

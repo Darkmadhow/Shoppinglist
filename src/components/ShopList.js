@@ -1,9 +1,16 @@
 import ShopItem from "./ShopItem";
 
-export default function ShopList({shoppingItems, removeItem}){
+export default function ShopList({shoppingItems, setItems}){
+
+    function deleteAll(){
+        setItems([]);
+    }
     return(
-        <ul>
-            {shoppingItems.map(item => <ShopItem item={item} removeItem={removeItem}/>)}
-        </ul>
+        <div className="listBody">
+            <ul>
+                {shoppingItems.map(item => <ShopItem item={item} setItems={setItems} key={item.itemName}/>)}
+            </ul>
+            <button onClick={deleteAll}>Delete All</button>
+        </div>
     );
 }

@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function ShopForm({addItem}){
+export default function ShopForm({setItems}){
     const [shoppingItem, setShoppingItem] = useState({
         itemName: ""
     });
@@ -11,7 +11,7 @@ export default function ShopForm({addItem}){
     function handleSubmit(e){
         e.preventDefault();
         if(shoppingItem.itemName){
-            addItem({...shoppingItem});
+            setItems(prev=>[...prev,shoppingItem]);
             //Reset Form
             setShoppingItem({itemName:""});
         }
